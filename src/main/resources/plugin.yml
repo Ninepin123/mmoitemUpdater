@@ -1,0 +1,21 @@
+name: mmoitemUpdater
+version: '1.0'
+main: me.ninepin.mmoitemUpdater.MmoitemUpdater
+api-version: '1.20'
+prefix: mmoitemUpdater
+authors: [ ninepin ]
+description: mmoitemUpdater
+commands:
+  updateitems:
+    description: Force update MMOItems to latest revision
+    usage: /<command> [player]
+    permission: mmoupdater.update
+    aliases: [ updateitem, revisionupdate ]
+
+permissions:
+  mmoupdater.update:
+    description: Allow updating items
+    default: true
+  mmoupdater.update.others:
+    description: Allow updating other players' items
+    default: op
