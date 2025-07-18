@@ -1,0 +1,53 @@
+# ============================================
+# MMOItems 強制更新器配置檔案
+# 版本: 1.0.0
+# ============================================
+
+# 強制物品更新設定
+forced-item-update:
+  # 是否啟用完整背包檢查
+  enabled: true
+
+  # 定時檢查間隔（秒）
+  schedule-interval: 1
+
+  # 性能優化設定
+  performance:
+    # 每次檢查的最大玩家數量（避免同時檢查太多玩家）
+    max-players-per-tick: 3
+
+    # 是否啟用智能檢查（只檢查背包有變化的玩家）
+    smart-check: false
+
+    # 檢查冷卻時間（玩家上次更新後多久才再次檢查，秒）
+    player-cooldown: 5
+
+    # 是否啟用異步檢查
+    async-check: true
+
+  # 在哪些事件時觸發完整背包檢查
+  trigger-events:
+    join: true              # 加入遊戲時
+    inventory-open: true    # 打開背包時
+    item-use: true         # 使用物品時
+    respawn: true          # 重生時
+    world-change: true     # 切換世界時
+
+  # 更新時的訊息設定
+  notifications:
+    enabled: true
+    message: "&a系統自動更新了你的 {count} 個物品到最新版本！"
+    # 是否只顯示大量更新的訊息（避免1個物品也顯示）
+    minimum-count-to-show: 3
+
+  # 白名單世界（僅在這些世界檢查）
+  whitelist-worlds: []
+  # 範例:
+  # - "world"
+  # - "world_nether"
+
+  # 黑名單物品ID（永不更新）
+  blacklist-items: []
+  # 範例:
+  # - "QUEST_ITEM_1"
+  # - "LEGACY_SWORD"
